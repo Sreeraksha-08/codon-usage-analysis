@@ -21,3 +21,25 @@
 
 - `figures/python/gc_ending_by_kingdom.png`
 - `figures/python/codon_correlation_heatmap.png`
+## Day 3 – SQL Database and PCA Analysis
+
+### SQLite Database
+
+- Created a SQLite database at `database/codon_usage.db`.
+- Created `organisms` and `codon_frequencies` tables.
+- Loaded 13,028 organisms into the database.
+- Loaded 833,789 codon-frequency records.
+
+### SQL Analysis
+
+- Created SQL analysis queries for organism counts and codon frequencies.
+- Saved query results in `results/tables/`.
+- Generated five CSV result tables.
+
+### PCA Analysis
+
+- Performed PCA on standardized codon-frequency data.
+- Used the first two principal components for visualization.
+- PC1 explained approximately 29.82% of the variance.
+- PC2 explained approximately 18.61% of the variance.
+- Generated `figures/python/pca_kingdom_clusters.png`.
