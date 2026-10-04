@@ -154,3 +154,43 @@ write.csv(
 )
 
 print("R results saved successfully!")
+# Phenylalanine codon comparison in bacteria
+
+phenylalanine <- read.csv(
+  "results/tables/bacteria_phenylalanine_means.csv"
+)
+
+names(phenylalanine) <- c("Codon", "MeanFrequency")
+
+barplot(
+  phenylalanine$MeanFrequency,
+  names.arg = phenylalanine$Codon,
+  main = "Phenylalanine Codon Usage in Bacteria",
+  xlab = "Codon",
+  ylab = "Mean Codon Frequency"
+)
+# Phenylalanine codon usage across organism groups
+
+# Phenylalanine codon usage across organism groups
+
+phenylalanine_groups <- read.csv(
+  "results/tables/phenylalanine_by_group.csv"
+)
+
+png(
+  "figures/r/phenylalanine_by_group.png",
+  width = 1200,
+  height = 700
+)
+
+barplot(
+  t(as.matrix(phenylalanine_groups[, c("UUU", "UUC")])),
+  beside = TRUE,
+  names.arg = phenylalanine_groups$Kingdom,
+  main = "Phenylalanine Codon Usage Across Organism Groups",
+  xlab = "Organism Group",
+  ylab = "Mean Codon Frequency",
+  legend.text = c("UUU", "UUC")
+)
+
+dev.off()
